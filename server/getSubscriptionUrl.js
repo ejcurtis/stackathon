@@ -1,5 +1,5 @@
 //sets a subscription pop up
-
+import fetch from 'node-fetch';
 
 const getSubscriptionUrl = async (ctx, accessToken, shop) => {
   const query = JSON.stringify({
