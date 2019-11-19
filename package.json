@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy": "script/deploy",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server.js",
     "build": "next build",
@@ -20,6 +21,7 @@
     "@shopify/polaris": "^4.8.0",
     "@zeit/next-css": "^1.0.1",
     "apollo-boost": "^0.4.4",
+    "axios": "^0.19.0",
     "dotenv": "^8.2.0",
     "graphql": "^14.5.8",
     "isomorphic-fetch": "^2.2.1",

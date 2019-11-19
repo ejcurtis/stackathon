@@ -13,10 +13,13 @@ import {
   PageActions,
   TextField,
   Toast,
+  Button
 } from '@shopify/polaris';
 import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
 import store from 'store-js';
+import CarbonMetrics from '../componenets/carbon-metrics'
+
 
 const UPDATE_PRICE = gql`
   mutation productVariantUpdate($input: ProductVariantInput!) {
@@ -35,6 +38,8 @@ const UPDATE_PRICE = gql`
     }
   }
 `;
+
+
 class EditProduct extends React.Component {
   state = {
     discount: '',
@@ -42,9 +47,13 @@ class EditProduct extends React.Component {
     variantId: '',
     showToast: false,
   };
-
   componentDidMount() {
     this.setState({ discount: this.itemToBeConsumed() });
+  }
+  showMetrics(evt) {
+    evt.preventDefault()
+    const metricsToggle = !this.state.showMetrics
+    return this.setState({ showMetrics: metricsToggle })
   }
 
   render() {
@@ -91,9 +100,10 @@ class EditProduct extends React.Component {
                             label="Discounted price"
                             type="discount"
                           />
+                          <Button onClick={this.showMetrics}>Show Carbon Score</Button>
                         </FormLayout.Group>
                         <p>
-                          This sale price will expire in two weeks
+                          Give your product more meaning
                         </p>
                       </FormLayout>
                     </Card>
@@ -118,6 +128,7 @@ class EditProduct extends React.Component {
                         },
                       ]}
                     />
+                    <CarbonMetrics/>
                   </Form>
                 </Layout.Section>
               </Layout>

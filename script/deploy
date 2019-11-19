@@ -1,0 +1,7 @@
+git checkout -b deploy
+
+# create a commit, even if nothing changed
+git commit --allow-empty -m 'Deploying'
+
+# push your local "deploy" branch to the "master" branch on heroku
+git push --force heroku deploy:master
