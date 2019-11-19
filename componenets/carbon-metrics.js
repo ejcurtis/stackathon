@@ -4,7 +4,7 @@ import {
   DataTable
 } from '@shopify/polaris';
 import React from "react";
-import axios from "Axios"
+import axios from "axios"
 
 class CarbonMetrics extends React.Component {
   constructor(props){

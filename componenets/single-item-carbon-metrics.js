@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { DataTable, Page, Button, Card, Collapsible } from '@shopify/polaris';
-import axios from "Axios"
+import axios from "axios"
 
 function SingleItemCarbonMetrics(props) {
   const [active, setActive] = useState(false);
